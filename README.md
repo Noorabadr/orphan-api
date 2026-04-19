@@ -1,32 +1,35 @@
 # Orphan & Sponsor API
 
+---
+
 ## Project Description
 This project is a simple backend API built using **Node.js, Express, and Sequelize**.
 
 The system manages **Sponsors** and **Orphans**, where:
-- One sponsor can sponsor many orphans
-- Each orphan belongs to one sponsor
+
+- One sponsor can sponsor many orphans  
+- Each orphan belongs to one sponsor  
 
 This project demonstrates CRUD operations and relationships using MySQL.
 
 ---
 
 ## Technologies Used
-- Node.js
-- Express.js
-- Sequelize ORM
-- MySQL (Docker)
-- dotenv
-- nodemon
+- Node.js  
+- Express.js  
+- Sequelize ORM  
+- MySQL (Docker)  
+- dotenv  
+- nodemon  
 
 ---
 
-## Setup Instructions
+## Installation Guide
 
 ### 1 Clone the repository
 ```bash
-git clone https://github.com/USERNAME/orphan-sponsor-api.git
-cd orphan-sponsor-api
+git clone https://github.com/Noorabadr/orphan-api.git
+cd orphan-api
 ```
 
 ### 2 Install dependencies
@@ -36,7 +39,8 @@ npm install
 
 ### 3 Create .env file
 Create a file named .env in the root folder:
-```bash
+
+```env
 PORT=3000
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -58,60 +62,74 @@ docker run --name mysql-orphan \
 npx sequelize-cli db:migrate
 ```
 
+---
+
 ## How to Run the Project
 ```bash
 npm run dev
 ```
+
 The server will run at:
-## http://localhost:3000
+http://localhost:3000
 
-## API Endpoints:
-## Home Route
-
-## GET /
-Returns a welcome message and project information.
 ---
-## Sponsors APIs
 
-## GET /api/sponsors
+## API Endpoints
+
+## Home Route
+GET /
+Returns a welcome message and project information.
+
+---
+
+## Sponsors APIs
+GET /api/sponsors
 Get all sponsors
 
-## GET /api/sponsors/:id
+GET /api/sponsors/:id
 Get sponsor by ID
 
-## POST /api/sponsors
+POST /api/sponsors
 Create sponsor
 
-## PUT /api/sponsors/:id
+PUT /api/sponsors/:id
 Update sponsor
 
-## DELETE /api/sponsors/:id
+DELETE /api/sponsors/:id
 Delete sponsor
 
-## Example Request (Sponsor)
+---
 
+## Example Request (Sponsor)
 ```json
 {
   "name": "Ahmad",
   "email": "ahmad@test.com"
 }
 ```
-## Orphans APIs
 
-## GET /api/orphans
+---
+
+## Orphans APIs
+GET /api/orphans
 Get all orphans
 
----
-
-## GET /api/orphans/:id
+GET /api/orphans/:id
 Get orphan with sponsor details
 
----
-
-### POST /api/orphans
+POST /api/orphans
 Create a new orphan
 
-```json id="o1"
+PUT /api/orphans/:id
+Update orphan
+
+DELETE /api/orphans/:id
+Delete orphan
+
+---
+
+## Example Request (Orphan)
+```json
 {
   "name": "malek",
   "age": 10,
