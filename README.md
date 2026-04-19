@@ -27,6 +27,7 @@ This project demonstrates CRUD operations and relationships using MySQL.
 ```bash
 git clone https://github.com/USERNAME/orphan-sponsor-api.git
 cd orphan-sponsor-api
+```
 
 ### 2 Install dependencies
 npm install
