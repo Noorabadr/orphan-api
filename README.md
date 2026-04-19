@@ -30,56 +30,62 @@ cd orphan-sponsor-api
 ```
 
 ### 2 Install dependencies
+```bash
 npm install
+```
 
 ### 3 Create .env file
 Create a file named .env in the root folder:
+```bash
 PORT=3000
-
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_USER=root
 DB_PASSWORD=123456
 DB_NAME=orphan_db
+```
 
 ### 4 Run MySQL using Docker
+```bash
 docker run --name mysql-orphan \
 -e MYSQL_ROOT_PASSWORD=123456 \
 -e MYSQL_DATABASE=orphan_db \
 -p 3306:3306 -d mysql:8
+```
 
 ### 5 Run migrations
+```bash
 npx sequelize-cli db:migrate
+```
 
 ## How to Run the Project
+```bash
 npm run dev
+```
 The server will run at:
+## http://localhost:3000
 
-### http://localhost:3000
-
-##API Endpoints:
+## API Endpoints:
 ## Home Route
 
-### GET /
+## GET /
 Returns a welcome message and project information.
-
 ---
-
 ## Sponsors APIs
 
-### GET /api/sponsors
+## GET /api/sponsors
 Get all sponsors
 
-### GET /api/sponsors/:id
+## GET /api/sponsors/:id
 Get sponsor by ID
 
-### POST /api/sponsors
+## POST /api/sponsors
 Create sponsor
 
-### PUT /api/sponsors/:id
+## PUT /api/sponsors/:id
 Update sponsor
 
-### DELETE /api/sponsors/:id
+## DELETE /api/sponsors/:id
 Delete sponsor
 
 ## Example Request (Sponsor)
@@ -89,15 +95,15 @@ Delete sponsor
   "name": "Ahmad",
   "email": "ahmad@test.com"
 }
-
+```
 ## Orphans APIs
 
-### GET /api/orphans
+## GET /api/orphans
 Get all orphans
 
 ---
 
-### GET /api/orphans/:id
+## GET /api/orphans/:id
 Get orphan with sponsor details
 
 ---
@@ -111,3 +117,4 @@ Create a new orphan
   "age": 10,
   "sponsorId": 1
 }
+```
